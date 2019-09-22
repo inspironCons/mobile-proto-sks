@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="tabs" text-center>
+      <ion-title>Mellanial-Wallets</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          color="tabs"
+          pullingIcon="arrow-dropdown"
+          pullingText="Lepaskan"
+          refreshingSpinner="circles"
+          refreshingText="Refresh">
+        </ion-refresher-content>
+    </ion-refresher>
+  <div class="content" *ngIf="historiTransaksi">
+    <ion-card *ngFor="let items of historiTransaksi ">
+        <ion-item>
+            <h2>Transaksi #{{items.transactionFaktur}}</h2>
+            <p> Pembayaran {{items.transactionType}} </p>
+            <button ion-button clear item-end icon-only (click)="detailPage(items.idTransaction)">
+              <ion-icon name="paper"></ion-icon>
+            </button>
+        </ion-item>
+    </ion-card>
+  </div>
+
+  <p *ngIf="!historiTransaksi">anda belum bertransaksi</p>
+</ion-content>

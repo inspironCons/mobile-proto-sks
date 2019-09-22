@@ -1,0 +1,39 @@
+page-Beranda {
+    
+    .saldo{
+        font-family: lato !important;
+        background-color:#4d9dee;
+        width: 100%;
+        height:125px;
+        color: white;
+    }
+    .btn-refresh{
+        position: relative;
+        float: right;
+        margin: -30px 30px;
+    }
+
+    .items-area{
+        
+        background: white;
+        width: 325px;
+        height: 60px;
+        position: relative;
+        
+        margin: auto;
+        margin-top:-30px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px 1px rgb(109, 109, 109);
+    }
+    .items-area.button-inner{
+        font-size: 10px;
+    }
+    ion-row.items{
+        position: relative;
+        height: 60px;
+        width: 100%;
+        padding:8px 0;
+    }
+    
+}
+

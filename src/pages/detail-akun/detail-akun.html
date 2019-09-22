@@ -1,0 +1,84 @@
+<!--
+  Generated template for the DetailAkunPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="tabs">
+      <button small ion-button icon-only clear float-right color="light" (click)="presentPopover($event)">
+          <ion-icon name="settings"></ion-icon>
+      </button>
+    <ion-title text-center style="margin-left:-10px;margin-bottom:-5px">Detail</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="Lepaskan"
+          refreshingSpinner="circles"
+          refreshingText="Refresh">
+        </ion-refresher-content>
+    </ion-refresher>
+  <ion-list>
+    <!-- <ion-item-divider color="light"></ion-item-divider> -->
+    <ion-item item-start>
+      Username
+      <ion-note item-end>{{infoDetail.username}}</ion-note>
+    </ion-item>
+    <ion-item item-start>
+      Telegram Id
+      <ion-note item-end>{{infoDetail.telegramId}}</ion-note>
+  </ion-item>
+</ion-list>
+<ion-list>
+    <ion-item-divider color="light"></ion-item-divider>
+    <ion-item item-start>
+      Jenis Kelamin
+      <ion-note item-end>{{infoDetail.jenisKelamin}}</ion-note>
+    </ion-item>
+    <ion-item item-start>
+      Tempat Lahir
+      <ion-note item-end>{{infoDetail.tempatLahir}}</ion-note>
+  </ion-item>
+    <ion-item item-start>
+        Tanggal Lahir
+        <ion-note item-end>{{infoDetail.tanggalLahir}}</ion-note>
+    </ion-item>
+    <ion-item item-start>
+        Telepon
+        <ion-note item-end>{{infoDetail.kontak}}</ion-note>
+    </ion-item>
+    <ion-item item-start>
+        Email
+        <ion-note item-end>{{infoDetail.email}}</ion-note>
+    </ion-item>
+</ion-list>
+<ion-list>
+    <ion-item-divider color="light"></ion-item-divider>
+    <ion-item item-start>
+      NIM
+      <ion-note item-end>{{infoDetail.NIM}}</ion-note>
+    </ion-item>
+    <ion-item item-start>
+        Fakultas
+        <ion-note item-end>{{infoDetail.fakultas}}</ion-note>
+    </ion-item>
+    <ion-item item-start>
+        Program Studi
+        <ion-note item-end> {{infoDetail.jurusan}}</ion-note>
+    </ion-item>
+</ion-list>
+<ion-card>
+  <ion-card-header>
+    Alamat
+  </ion-card-header>
+  <ion-card-content>
+    <p>{{infoDetail.alamat+' '+ infoDetail.kecamatan+' '+ infoDetail.kota+' '+infoDetail.provinsi}}<br><br>
+    {{infoDetail.kodePos}}
+    </p>
+  </ion-card-content>
+</ion-card>
+</ion-content>

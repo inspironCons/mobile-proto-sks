@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar color="tabs">
+    <ion-title>SKS</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list inset no-lines>
+    <ion-item>
+      <ion-label>SKS</ion-label>
+      <ion-select [(ngModel)]="data.sks" okText="Pilih" cancelText="tutup" (ionChange)="jumlah(data.sks)">
+        <ion-option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]" [value]="i">{{i}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-list inset>
+    <ion-item>
+      <ion-label>Harga</ion-label>
+      <ion-input text-right [(ngModel)]="data.harga" type="text" [readonly]="isReadonly()"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Total</ion-label>
+      <ion-input text-right [(ngModel)]="data.total" type="text" [readonly]="isReadonly()"></ion-input>
+    </ion-item> 
+  </ion-list>
+  <button ion-button round outline (click)="auth()" style="margin:20px 0 0 116px">Bayar</button>
+</ion-content>

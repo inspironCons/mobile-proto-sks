@@ -1,0 +1,38 @@
+<!--
+  Generated template for the TatacaraTelegramIdPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="tabs">
+    <ion-title>Tata Cara</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeModal()">
+          <ion-icon item-right name="ios-close-outline"></ion-icon>
+      </button>
+  </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <timeline>
+    <timeline-item *ngFor="let item of items">
+      <timeline-time [time]="item.time"></timeline-time>
+      <!-- <ion-icon [name]="item.icon"></ion-icon> -->
+      <p>{{item.icon}}</p>
+      <ion-card>
+        <ion-card-header>
+          <b>{{item.title}}</b>
+        </ion-card-header>
+        <ion-card-content>
+          {{item.content}}
+        </ion-card-content>
+      </ion-card>
+    </timeline-item>
+    <p text-center>Download Aplikasi TELEGRAM</p>
+    <button ion-button icon-only large clear full color="secondary">
+        <ion-icon ios="ios-appstore" md="md-appstore"></ion-icon>
+    </button>
+  </timeline>
+</ion-content>

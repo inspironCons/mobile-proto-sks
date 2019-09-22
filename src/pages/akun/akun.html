@@ -1,0 +1,45 @@
+<ion-header>
+
+  <ion-navbar color="tabs" text-center>
+      <ion-title>Mellanial-Wallets</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content fullscreen>
+  <div class="header-parent">
+    <img src="../../assets/imgs/wp.jpg" style="width:100%">
+  </div>
+
+  <div class="foto-profil">
+    
+  </div>
+
+  <div class="content-profil">
+    <ion-row>
+      <ion-col col-8>
+        <b>{{userInfo.namaDepan +' '+ userInfo.namaBelakang}}</b>
+      </ion-col>
+      <ion-col col-4 style="font-size:10px;text-align: right;margin-top:-10px">
+        <button ion-button small color="dark" clear (click)="navigatePage('DetailAkunPage')"><small>Lihat Semua</small></button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-8 style="font-size:10px;margin-top:-10px;">
+        {{userInfo.email}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-8 style="font-size:10px">
+        {{userInfo.jurusan}}
+      </ion-col>
+    </ion-row>
+  </div>
+  <ion-row>
+    <ion-col text-center>
+        <button ion-button clear color="danger" (click)="navigatePage('LoginPage')">Keluar</button>
+    </ion-col>
+  </ion-row>
+  
+</ion-content>

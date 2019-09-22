@@ -38,7 +38,8 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  tabs:       #0d86ff
 );
 
 
@@ -47,6 +48,7 @@ $colors: (
 // iOS only Sass variables can go here
 
 
+$loading-ios-background : transparent;
 
 
 // App Material Design Variables
@@ -54,6 +56,9 @@ $colors: (
 // Material Design only Sass variables can go here
 
 
+$loading-md-spinner-bubbles-color:rgb(255, 255, 255);
+$loading-md-box-shadow-color: none;
+$loading-md-background : transparent;
 
 
 // App Windows Variables

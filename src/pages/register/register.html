@@ -1,0 +1,101 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="tabs">
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list padding>
+    <ion-item>
+      <ion-label floating>Username*</ion-label>
+      <ion-input type="text" [(ngModel)]="data.username" name="username" (ionBlur)="chekUsername(data.username)"></ion-input>
+    </ion-item>
+    <ion-card *ngIf="isCorrectUsername == true" [color]="color.username">
+        <ion-card-content>
+          {{text.username}}
+        </ion-card-content>
+    </ion-card>
+    <ion-card *ngIf="isCorrectUsername == false" [color]="color.username">
+        <ion-card-content>
+          {{text.username}}
+        </ion-card-content>
+    </ion-card>
+    <ion-item>
+      <ion-label floating>Email*</ion-label>
+      <ion-input type="email" [(ngModel)]="data.email" name="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Telegram Id*</ion-label>
+      <ion-input type="text" [(ngModel)]="data.telegramId" name="telegramId"></ion-input>
+    </ion-item>
+    <small color="tabs" style="margin-left: 15px; color:blue" (click)="howTO()">Apa itu Telegram Id ?</small>
+    </ion-list>
+    <ion-list>
+      
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label floating>Nama Depan*</ion-label>
+              <ion-input type="text" [(ngModel)]="data.namaDepan" name="namaDepan"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label floating>Nama Belakang*</ion-label>
+              <ion-input type="text" [(ngModel)]="data.namaBelakang" name="namaBelakang"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label floating>NIM*</ion-label>
+              <ion-input type="text" [(ngModel)]="data.NIM" name="NIM" (ionBlur)="chekNIM(data.NIM)"></ion-input>
+            </ion-item>
+            <ion-card *ngIf="isCorrectNIM == true" [color]="color.nim">
+                <ion-card-content>
+                  {{text.nim}}
+                </ion-card-content>
+            </ion-card>
+            <ion-card *ngIf="isCorrectNIM == false" [color]="color.nim">
+                <ion-card-content>
+                  {{text.nim}}
+                </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label floating>Fakultas</ion-label>
+              <ion-select [(ngModel)]="data.fakultas" okText="Pilih" (ionChange)="setJurusan(data.fakultas)" name="fakultas">
+                <ion-option *ngFor="let item of FAKULTAS" [value]="item">{{item.fakultas}}</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+              <ion-item>
+                <ion-label floating>Jurusan</ion-label>
+                <ion-select [(ngModel)]="data.jurusan" okText="Pilih" name="jurusan">
+                <ion-option *ngFor="let item of selectJurusan" [value]="item.Jurusan">{{item.Jurusan}}</ion-option>                
+                </ion-select>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+      </ion-grid>
+      <div text-center class="btn-signup">
+          <button ion-button round outline color="primary" (click)="SignUp()">Buat Akun</button>
+      </div>
+    </ion-list>
+</ion-content>

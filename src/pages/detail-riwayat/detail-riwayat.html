@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar color="dark">
+    <ion-title>Detai Riwayat</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeModal()">
+          <ion-icon item-right name="ios-close-outline"></ion-icon>
+      </button>
+  </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list no-border>
+
+    <ion-list-header>
+      Nomor Transaksi # {{data.transactionFaktur}}
+    </ion-list-header>
+
+    <ion-item>
+      Jenis Pembayaran
+      <ion-note item-end>{{data.transactionType}}</ion-note>
+    </ion-item>
+    <ion-item>
+      Tanggal Pembayaran
+      <ion-note item-end>{{indo_tanggal}}</ion-note>
+    </ion-item>
+    <ion-item>
+      Waktu Pembayaran
+      <ion-note item-end> {{indo_waktu}} </ion-note>
+    </ion-item>
+  </ion-list>
+  <ion-list no-border>
+
+    <ion-list-header>
+      Detail Bayar
+    </ion-list-header>
+    <ion-item no-lines> 
+      Harga Per SKS
+      <ion-note item-end>{{data.unitPrice | currency :"Rp.":false:'1.0-0'}}</ion-note>
+    </ion-item>
+    <ion-item>
+      Jumlah SKS
+      <ion-note item-end> {{data.amount}} </ion-note>
+    </ion-item>
+    <ion-item no-lines>
+      <b>Total</b> 
+    <ion-note item-end>{{data.total  | currency :"Rp ":false:'1.0-0'}} </ion-note>
+    </ion-item>
+  </ion-list>
+</ion-content>

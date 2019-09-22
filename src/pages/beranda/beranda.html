@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar color="tabs" text-center>
+    <ion-title>Mellanial-Wallets</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          color="tabs"
+          pullingIcon="arrow-dropdown"
+          pullingText="Lepaskan"
+          refreshingSpinner="circles"
+          refreshingText="Refresh">
+        </ion-refresher-content>
+    </ion-refresher>
+  <div class="saldo">
+    <ion-row>
+      <ion-col col-12 style="font-size:10px;padding-top: 10px;margin: 0 9px;">
+        M-Cash
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-1 style="font-size:10px;color:#ffd04e;margin-top:-10px;text-align: right;">
+            <b>Rp</b>
+          </ion-col>
+      <ion-col col-10 style="font-size:25px;color:#ffd04e;margin:-10px">
+        <b> {{userInfo.saldo | currency:" ": false: '1.0-0'}} </b>
+      </ion-col>
+    </ion-row>
+    <button ion-button icon-only clear color="light" class="btn-refresh">
+        <ion-icon name="refresh"></ion-icon>
+    </button>
+  </div>
+
+  <div class="items-area">
+      <ion-row class="items">
+        <ion-col text-center col-4>
+            <button ion-button clear style="margin:auto; margin-left: -12px;" (click)="navigation('TransaksiPage')">
+              <i class="fa fa-chevron-circle-right" aria-hidden="true"> Transaksi</i>
+            </button>
+        </ion-col>
+        <ion-col text-center col-4 style="border:1px solid rgba(75, 75, 75, 0.2);border-top:0;border-bottom:0; margin:auto;margin-top:-4px;">
+            <button ion-button clear>
+                <i class="fa fa-arrow-down" aria-hidden="true"> Terima</i>
+            </button>
+        </ion-col>
+        <ion-col text-center col-4 style="margin:auto;margin:-4px 0 0 -2px;">
+            <button ion-button clear (click)="navigation('TopupPage')">
+                <i class="fa fa-plus" aria-hidden="true"> Top Up</i>
+            </button>
+        </ion-col>
+      </ion-row>
+  </div>
+</ion-content>

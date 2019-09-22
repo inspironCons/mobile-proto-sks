@@ -1,0 +1,34 @@
+<!--
+  Generated template for the VouchermethodPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Reedem Voucher</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item>
+      <ion-label floating>Masukan 16 digit kode</ion-label>
+      <ion-input type="number" name="voucher" [(ngModel)]="data.voucher" minlength="16" maxlength="16" #vch="ngModel"></ion-input>
+    </ion-item>
+
+    <div *ngIf="vch.errors?.minlength">
+        <ion-card color="danger">
+            <ion-card-content>
+             Kode tidak boleh kurang 16 digit              
+            </ion-card-content>
+        </ion-card>
+    </div> 
+    <div *ngIf="vch.errors?.maxlength"> 
+        <ion-card color="danger">
+            <ion-card-content>
+             Kode tidak boleh lebih 16 digit
+            </ion-card-content>
+        </ion-card>
+  </div> 
+    <button ion-button round outline (click)="Reedem()" style="margin:20px 0 0 116px">Reedem</button>
+</ion-content>

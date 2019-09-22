@@ -1,0 +1,21 @@
+<ion-content class="bg-image no-scroll" padding>
+  <img src="assets/imgs/M.png" class="logo">
+  <div> 
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" [(ngModel)]="loginData.username" name="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="Password" [(ngModel)]="loginData.password" name="password"></ion-input>
+    </ion-item>
+    <p class="text">Lupa Password?</p>
+    <div text-center class="btn-login">
+      <button ion-button round color="primary" (click)="navigatePage('NavmenuPage')">Masuk</button>
+    </div>
+    <p text-center style="font-size:10px;padding-top:80px">Belum punya Akun?, Klik Buat Akun</p>
+    <div text-center class="btn-signup">
+      <button ion-button round outline color="secondary" (click)="navigatePage('RegisterPage')">Buat Akun</button>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Setting</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-input type="hidden" [(ngModel)]="data.idUser" name="idUser"></ion-input>
+    <ion-item>
+        <ion-label color="primary">Email</ion-label>
+        <ion-input text-right [(ngModel)]="data.email" name="email"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary">telegram Id</ion-label>
+        <ion-input text-right [(ngModel)]="data.telegramId" name="telegramId"></ion-input>
+    </ion-item>
+  <ion-list>
+    <ion-list-header color="light" no-border>
+       Informasi Akun
+    </ion-list-header>
+    <ion-item>
+        <ion-label color="primary">NIM</ion-label>
+        <ion-input text-right [(ngModel)]="data.NIM" name="NIM"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary">Nama Depan</ion-label>
+        <ion-input text-right [(ngModel)]="data.namaDepan" name="namaDepan"></ion-input>
+    </ion-item> 
+    <ion-item>
+        <ion-label color="primary">Nama Belakang</ion-label>
+        <ion-input text-right [(ngModel)]="data.namaBelakang" name="namaBelakang"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary">Kontak</ion-label>
+        <ion-input text-right type="number" [(ngModel)]="data.kontak" name="kontak"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary">Tempat Lahir</ion-label>
+        <ion-input text-right [(ngModel)]="data.tempatLahir" name="tempatLahir"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary">Tanggal Lahir</ion-label>
+        <ion-datetime text-right displayFormat="DD MMMM, YYYY" monthNames="januari,Februari,Maret,April,Mei,Juni,Juli,Agustus,September,Oktober,November,Desember" [(ngModel)]="data.tanggalLahir" name="tanggalLahir"></ion-datetime>
+    </ion-item>
+    <ion-item>
+        <ion-label floating color="primary">Fakultas</ion-label>
+        <ion-select [(ngModel)]="data.fakultas" okText="Pilih" [placeholder]="data.fakultas" (ionChange)="setJurusan(data.fakultas)" name="fakultas">
+          <ion-option *ngFor="let item of FAKULTAS" [value]="item">{{item.fakultas}}</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label floating color="primary">Jurusan</ion-label>
+        <ion-select [(ngModel)]="data.jurusan" okText="Pilih" [placeholder]="data.jurusan" name="jurusan">
+        <ion-option *ngFor="let item of selectjurusan" [value]="item.Jurusan">{{item.Jurusan}}</ion-option>                
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label floating color="primary">Jenis Kelamin</ion-label>
+        <ion-select [(ngModel)]="data.jenisKelamin" okText="Pilih" [placeholder]="data.jenisKelamin" name="jenisKelamin">
+          <ion-option value="Laki-Laki" >Laki-Laki</ion-option>
+          <ion-option value="Perempuan" >Perempuan</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary" stacked>Alamat</ion-label>
+        <ion-input [(ngModel)]="data.alamat" name="alamat"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label floating color="primary">Provinsi</ion-label>
+        <ion-select [(ngModel)]="data.provinsi" okText="Pilih" [placeholder]="data.provinsi" (ionChange)="setDaerah(data.provinsi)" name="provinsi">
+          <ion-option *ngFor="let item of provinsi" [value]="item" >{{item.province}}</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+          <ion-label floating color="primary">Kota/Kabupaten</ion-label>
+          <ion-select [(ngModel)]="data.kota" okText="Pilih" [placeholder]="data.kota" (ionChange)="setKecamatan(data.kota)" name="kota">
+            <ion-option *ngFor="let item of selectDaerah" [value]="item">{{item.regency}}</ion-option>
+          </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label floating color="primary">Kecamatan</ion-label>
+      <ion-select [(ngModel)]="data.kecamatan" okText="Pilih" [placeholder]="data.kecamatan" name="kecamatan">
+        <ion-option *ngFor="let item of selectKecamatan" [value]="item.distrik">{{item.distrik}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label color="primary">Kode Pos</ion-label>
+        <ion-input text-right [(ngModel)]="data.kodePos" name="kodePos"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-fab bottom left>
+      <button ion-fab (click)="save()" color="dark">
+        <ion-icon name="done-all"></ion-icon>
+      </button>
+    </ion-fab>
+</ion-content>
